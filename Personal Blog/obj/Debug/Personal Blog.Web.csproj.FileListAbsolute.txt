@@ -83,3 +83,10 @@ E:\VS2019\个人博客\Personal Blog\Personal Blog\obj\Debug\Personal Blog.Web.c
 E:\VS2019\个人博客\Personal Blog\Personal Blog\obj\Debug\Personal Blog.Web.csproj.CopyComplete
 E:\VS2019\个人博客\Personal Blog\Personal Blog\obj\Debug\Personal Blog.dll
 E:\VS2019\个人博客\Personal Blog\Personal Blog\obj\Debug\Personal Blog.pdb
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Personal Blog.Model.dll
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Perssonal Blog.DAL.dll
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Dapper.dll
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Personal Blog.Model.pdb
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Perssonal Blog.DAL.pdb
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Perssonal Blog.DAL.dll.config
+E:\VS2019\个人博客\Personal Blog\Personal Blog\bin\Dapper.xml

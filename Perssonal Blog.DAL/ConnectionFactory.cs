@@ -16,22 +16,10 @@ namespace Personal_Blog.DAL
         /// 取数据库连接
         /// </summary>
         /// <param name="connStr">数据库连接字符串</param>
-        /// <returns></returns>string connStr
-        public static DbConnection GetOpenConnection(string connStr)
-        {
-            //var connection = new MySql.Data.MySqlClient.MySqlConnection(connStr);
-              var connection = new System.Data.SqlClient.SqlConnection(connStr); 
-            connection.Open();
-            return connection;
-        }
-        //public static string ConnectionString
-        //{
-        //    get
-        //    {
-        //        return ConfigurationManager.ConnectionStrings["Dbconn"].ToString();
-
-        //    }
-        //}
-
+        /// <returns></returns>string connStr 
+        public static string ConnectionString
+          {
+              get { return ConfigurationManager.ConnectionStrings["Dbconn"].ConnectionString; }
+          }
     }
 }

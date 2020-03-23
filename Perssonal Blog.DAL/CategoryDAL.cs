@@ -21,14 +21,29 @@ namespace Personal_Blog.DAL
         /// <param name="m"></param>
         /// <returns></returns>
       
-        public int Insert(Model.Category m)
+        public int Insert(Model.Blog m)
         {
-            using (var connection = ConnectionFactory.GetOpenConnection(ConnStr))
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
             {
                 int resid = connection.Query<int>(
-                    @"INSERT INTO Category(CaName,Number,Pbh,Remark) values(@CaName,@Bh,@Pbh,@Remark);SELECT @@IDENTITY;",
+                    @"INSERT INTO Category(CaName,Number,Pbh,Remark) values(@CaName,@Number,@Pbh,@Remark);SELECT @@IDENTITY;",
                     m).First();
                 return resid;
+            }
+        }
+        /// <summary>
+        /// 根据编号取实体
+        /// </summary>
+        /// <param name="caNumber"></param>
+        /// <returns></returns>
+        public Category GetModelByNumber(string caNumber)
+        {
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
+            {
+                var m = connection.Query<Model.Category>("select * from category where Number=@Number",
+
+                   new { Number=caNumber }).FirstOrDefault();
+                return m;
             }
         }
         /// <summary>
@@ -37,7 +52,7 @@ namespace Personal_Blog.DAL
         /// <param name="id"></param>
         public bool Delete(int id)
         {
-            using (var connection = ConnectionFactory.GetOpenConnection(ConnStr))
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
             {
                int res= connection.Execute(@"delete from Category where id=@id",new { id=id});
                 if (res>0)
@@ -55,7 +70,7 @@ namespace Personal_Blog.DAL
         /// <returns></returns>
         public List<Model.Category> GetList(string cond)
         {
-            using (var connection = ConnectionFactory.GetOpenConnection(ConnStr))
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
             {
                 string sql = "select *from Category";
                 if (!string.IsNullOrEmpty(cond))
@@ -73,7 +88,7 @@ namespace Personal_Blog.DAL
         /// <returns></returns>
         public Model.Category GetModel(int id)
         {
-            using (var connection = ConnectionFactory.GetOpenConnection(ConnStr))
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
             {
                 var m = connection.Query<Model.Category>("select * from category where id = @id",
 
@@ -88,11 +103,11 @@ namespace Personal_Blog.DAL
         /// <returns></returns>
         public bool Update(Model.Category m)
         {
-            using (var connection = ConnectionFactory.GetOpenConnection(ConnStr))
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
             {
                 int res = connection.Execute(@"UPDATE [category]
                                                SET  [CaName] = @CaName
-                                                   ,[Bh] = @Bh
+                                                   ,[Number] = @Number
                                                    ,[Pbh] = @Pbh
                                                    ,[Remark] = @Remark
                                                 WHERE Id=@Id", m);

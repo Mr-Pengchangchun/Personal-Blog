@@ -51,6 +51,25 @@ namespace Personal_Blog.DAL
             }
         }
         /// <summary>
+        /// 计算记录数
+        /// </summary>
+        /// <returns></returns>
+        public int CalcCount(string cond)
+        {
+            string sql = "select count(1) from [blog]";
+            if (!string.IsNullOrEmpty(cond))
+            {
+                sql += " where " + cond;
+            }
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
+            {
+                int i = connection.QuerySingle<int>(sql);
+                return i;
+            }
+        }
+
+
+        /// <summary>
         /// 根据编号取实体
         /// </summary>
         /// <param name="caNumber"></param>
@@ -87,19 +106,19 @@ namespace Personal_Blog.DAL
         /// </summary>
         /// <param name="cond"></param>
         /// <returns></returns>
-        public List<Model.Blog> GetList(string cond)
-        {
-            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
-            {
-                string sql = "select *from Blog";
-                if (!string.IsNullOrEmpty(cond))
-                {
-                    sql += $"where{cond}";
-                }
-                var list = connection.Query<Model.Blog>(sql).ToList();
-                return list;
-            }
-        }
+        //public List<Model.Blog> GetList(string cond)
+        //{
+        //    using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
+        //    {
+        //        string sql = "select *from Blog";
+        //        if (!string.IsNullOrEmpty(cond))
+        //        {
+        //            sql += $"where{cond}";
+        //        }
+        //        var list = connection.Query<Model.Blog>(sql).ToList();
+        //        return list;
+        //    }
+        //}
         /// <summary>
         /// 获取实体类
         /// </summary>
@@ -140,8 +159,36 @@ namespace Personal_Blog.DAL
                 return false;
             }
         }
+        ///分页，使用offset,mssql2012以后有用
+        /// </summary> 
+        /// <param name="orderstr">如：yydate desc,yytime asc,id desc,必须形成唯一性</param>
+        /// <param name="PageSize"></param>
+        /// <param name="PageIndex"></param>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public List<Model.Blog> GetList(string orderstr, int PageSize, int PageIndex, string strWhere)
+        {
+            if (!string.IsNullOrEmpty(strWhere))
+            {
+                strWhere = " where " + strWhere;
+            }
+            string sql = string.Format(
+                    "select * from [blog] {0} order by {1} offset {2} rows fetch next {3} rows only",
+                    strWhere,
+                    orderstr,
+                    (PageIndex - 1) * PageSize,
+                    PageSize
+                );
+            List<Model.Blog> list = new List<Model.Blog>();
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
+            {
+                list = connection.Query<Model.Blog>(sql).ToList();
+            }
+            return list;
+        }
 
 
     }
 }
+
 

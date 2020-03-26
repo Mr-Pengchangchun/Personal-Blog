@@ -1,8 +1,4 @@
 ﻿
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +8,8 @@
     <script language="JavaScript" src="/Content/adminstyle/js/jquery.js"></script>
     <script src="/Content/adminstyle/js/cloud.js" type="text/javascript"></script>
 
-    <script language="javascript">$(function () {
+    <script language="javascript">
+        $(function () {
             $('.loginbox').css({ 'position': 'absolute', 'left': ($(window).width() - 692) / 2 });
             $(window).resize(function () {
                 $('.loginbox').css({ 'position': 'absolute', 'left': ($(window).width() - 692) / 2 });
@@ -45,7 +42,7 @@
         <span class="systemlogo"></span>
 
         <div class="loginbox">
-            <form method="post" action="">
+            <form method="post" action="/Admin/Login">
                 <ul>
                     <li><input name="username" type="text" id="username" class="loginuser" value="" required="required" /></li>
                     <li><input name="password" id="password" type="password" class="loginpwd" value="" required="required" /></li>
@@ -58,14 +55,8 @@
         </div>
 
     </div>
-
-
-
-    <div class="loginbm">版权所有 &copy;  2022-2032  <a href="http://www.niunan.net" target="_blank">www.niunan.net</a>  </div>
-
-
+    <div class="loginbm">版权所有 &copy;  2022-2032  <a href="http://www.felix.com" target="_blank">www.felix.com</a></div>
 </body>
-
 </html>
 
 

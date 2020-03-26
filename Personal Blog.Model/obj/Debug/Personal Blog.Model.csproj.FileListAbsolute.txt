@@ -2,3 +2,4 @@ E:\VS2019\个人博客\Personal Blog\Personal Blog.Model\bin\Debug\Personal Blog
 E:\VS2019\个人博客\Personal Blog\Personal Blog.Model\bin\Debug\Personal Blog.Model.pdb
 E:\VS2019\个人博客\Personal Blog\Personal Blog.Model\obj\Debug\Personal Blog.Model.dll
 E:\VS2019\个人博客\Personal Blog\Personal Blog.Model\obj\Debug\Personal Blog.Model.pdb
+E:\VS2019\个人博客\Personal Blog\Personal Blog.Model\obj\Debug\Personal Blog.Model.csprojAssemblyReference.cache

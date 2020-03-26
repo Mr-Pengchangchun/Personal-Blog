@@ -111,6 +111,7 @@ namespace Personal_Blog.Web.Areas.Admin.Controllers
             return View(m);     
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(Model.Blog m)
         {
             Model.Category ca = cadal.GetModelByNumber(m.CaNumber);

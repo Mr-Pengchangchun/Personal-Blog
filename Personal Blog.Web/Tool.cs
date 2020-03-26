@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Text;
 
 namespace Personal_Blog.Web
 {
@@ -103,14 +106,14 @@ namespace Personal_Blog.Web
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        //public static string MD5Hash(string input)
-        //{
-        //    using (var md5 = MD5.Create())
-        //    {
-        //        var result = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
-        //        var strResult = BitConverter.ToString(result);
-        //        return strResult.Replace("-", "");
-        //    }
-        //}
+        public static string MD5Hash(string input)
+        {
+            using (var md5 = MD5.Create())
+            {
+                var result = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
+                var strResult = BitConverter.ToString(result);
+                return strResult.Replace("-", "");
+            }
+        }
     }
 }

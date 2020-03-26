@@ -1,12 +1,19 @@
-# Personal-Blog
-第一次搭建个人博客源码
 1.需求分析：
 首页、心情随笔、韶华追忆、技术分享、个人归档、书屋、Blog留言、关于我
 2.前期准备
 技术：ASP.NET MVC +SQL Server 2018+ADO.NET
 网页模板：
 	前台：
-	后台：
+	后台：http://www.jianshu.com/p/55493b356dcc
 源码管理：https://github.com/Mr-Pengchangchun/Personal-Blog
-
-
+3.数据库设计
+博客表，分类表，管理员表
+4.后台博客文章增删改查
+建立区域，修改路由配置，套用静态后台页
+5.博客增删改查，Layui分页
+6.博客查询和Layui编辑器的使用(未实现上传图片功能)
+7.后台登录和前台整合
+使用session对话来验证是否登录，
+前台浏览博客
+8.前台整合2
+9.树形菜单

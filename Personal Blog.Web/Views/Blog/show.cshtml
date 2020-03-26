@@ -1,10 +1,14 @@
 ﻿@{
     ViewBag.Title = Model.title;
-   Personal_Blog.DAL.BlogDAL blogdal = ViewBag.blogdal;
+    Personal_Blog.DAL.BlogDAL blogdal = ViewBag.blogdal;
 }
-@model  Personal_Blog.Model.Blog
+@model Personal_Blog.Model.Blog
 
-
+<script src="~/Content/layui/layui.js"></script>
+<link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+<link href="~/Content/assets/Hexo/css/style.css" rel="stylesheet" />
+<link href="~/Content/assets/Default/styles/font-awesome.css" rel="stylesheet" />
+<script src="~/Content/assets/Hexo/js/jquery-1.10.2.min.js"></script>
 <div class="body-wrap">
 
     <article class="article article-type-post" itemscope itemprop="blogPost">
@@ -36,9 +40,5 @@
             </div>
         </div>
     </article>
-
-
-
-
 </div>
 

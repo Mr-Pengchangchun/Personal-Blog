@@ -16,3 +16,6 @@ E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\obj\Debug\Personal Blog.
 E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\obj\Debug\Personal Blog.DAL.csproj.CopyComplete
 E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\obj\Debug\Perssonal Blog.DAL.dll
 E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\obj\Debug\Perssonal Blog.DAL.pdb
+E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\bin\Debug\Json.Net.dll
+E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\VS2019\个人博客\Personal Blog\Perssonal Blog.DAL\bin\Debug\Newtonsoft.Json.xml

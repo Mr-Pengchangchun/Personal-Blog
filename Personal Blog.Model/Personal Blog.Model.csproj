@@ -45,6 +45,7 @@
     <Compile Include="Blog.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeNode_LayUi.cs" />
     <Compile Include="VM_IndexLeft.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

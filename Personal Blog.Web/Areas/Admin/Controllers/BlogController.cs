@@ -64,7 +64,7 @@ namespace Personal_Blog.Web.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(canum))
             {
                 canum = Tool.GetSafeSQL(canum);
-                cond += $" and canum='{canum}'";
+                cond += $" and canumber='{canum}'";
             }
             return cond;
         }

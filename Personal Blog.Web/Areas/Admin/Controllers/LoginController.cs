@@ -11,7 +11,7 @@ namespace Personal_Blog.Web.Areas.Admin.Controllers
     public class LoginController : Controller
     {
 
-        DAL.AdminDAL adal = new AdminDAL();
+        DAL.AdminDAL adal=new AdminDAL();
         public LoginController()
         {
         }
@@ -36,7 +36,8 @@ namespace Personal_Blog.Web.Areas.Admin.Controllers
             {
             username = Tool.GetSafeSQL(username);
             password = Tool.GetSafeSQL(password);
-            Model.Admin a = adal.Login(username, password);
+             Model.Admin a = adal.Login(username, password);
+                //Model.Admin a = new DAL.AdminDAL().Login(username, password);
             if (a == null)
             {
                 return Content("<script> alert('登录失败，用户名或密码错误！');location.href='/Admin/Login/'</script>");

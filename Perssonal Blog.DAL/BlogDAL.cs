@@ -67,6 +67,7 @@ namespace Personal_Blog.DAL
                 return i;
             }
         }
+        
 
 
         /// <summary>
@@ -186,7 +187,21 @@ namespace Personal_Blog.DAL
             }
             return list;
         }
+        /// <summary>
+        /// 获取博客表的月份
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetBlogMonth()
+        {
 
+            string sql = "select left(CONVERT(varchar(100), CreateDate, 23),7) from blog group by left(CONVERT(varchar(100), CreateDate, 23),7) order by 1 desc";
+            using (var connection = new SqlConnection(ConnectionFactory.ConnectionString))
+            {
+                var list = connection.Query<string>(sql).ToList();
+                return list;
+            }
+
+        }
 
     }
 }

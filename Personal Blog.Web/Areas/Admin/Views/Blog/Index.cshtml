@@ -31,7 +31,7 @@
             </select>
         </div>
         <div class="layui-input-inline">
-            <button class="layui-btn layui-btn-normal" type="button" onclick="search()"><i class="layui-icon">&#xe615;</i> 查询</button>
+            <button class="layui-btn layui-btn-normal" onclick="search()" type="button" ><i class="layui-icon" >&#xe615;</i> 查询</button>
         </div>
     </div>
     <table class="layui-table">
@@ -120,7 +120,7 @@
         var start = document.getElementById('search_start').value;
         var end = document.getElementById('search_end').value;
         var canum = document.getElementById('search_canum').value;
-        var postdata = { key: key, start: start, end: end, canum: canum };
+        var postdata = { key: key,start:start, end:end, canum:canum };
         return postdata
 
     }
